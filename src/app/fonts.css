@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Tobias";
+  src: url("/fonts/tobias/TobiasTRIAL-Light-BF6719af6e0a52b.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PolySans Bulky";
+  src: url("/fonts/PolySans-Bulky/PolySans-Bulky.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PolySans Bulky Slim";
+  src: url("/fonts/PolySans-Bulky/plolysanstrial-slim.otf") format("opetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
