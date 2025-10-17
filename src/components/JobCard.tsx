@@ -146,7 +146,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, isApplied, applicantCount, isSav
           </div>
         )}
         <CardContent className="p-0">
-          <NavigationLink href={`/jobs/${job.slug}`} className="block" prefetch={true}>
+          <NavigationLink href={`/jobs/${job.slug}`} className="block">
             <div className="p-6">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 {/* Left content */}
