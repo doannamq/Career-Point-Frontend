@@ -17,7 +17,7 @@ export function FormSidebar() {
       <div className="p-6 border-b">
         <h2 className="text-2xl font-bold text-foreground">CV Builder</h2>
         <p className="text-sm text-muted-foreground mt-1">
-          Bước 1: Chọn template → Bước 2: Điền thông tin → Bước 3: Tải PDF
+          Bước 1: Chọn mẫu CV → Bước 2: Điền thông tin → Bước 3: Tải PDF
         </p>
       </div>
 
@@ -27,7 +27,7 @@ export function FormSidebar() {
             <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7">
               <TabsTrigger value="template" className="gap-2">
                 <Palette className="w-4 h-4" />
-                <span className="hidden lg:inline">Template</span>
+                <span className="hidden lg:inline">Mẫu CV</span>
               </TabsTrigger>
               <TabsTrigger value="personal" className="gap-2">
                 <User className="w-4 h-4" />

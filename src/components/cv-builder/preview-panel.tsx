@@ -73,7 +73,7 @@ export function PreviewPanel() {
         : `CV_${selectedTemplate}.pdf`;
 
       pdf.save(fileName);
-      toast.success("Tải PDF thành công!", { id: "pdf-generation" });
+      toast.success("Tạo PDF thành công!", { id: "pdf-generation" });
     } catch (error) {
       console.error("Error generating PDF:", error);
       toast.error("Có lỗi xảy ra khi tạo PDF. Vui lòng thử lại.", { id: "pdf-generation" });

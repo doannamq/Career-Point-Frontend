@@ -12,8 +12,8 @@ export function TemplateSelector() {
   return (
     <div className="space-y-4">
       <div>
-        <h3 className="text-lg font-semibold mb-2">Bước 1: Chọn Template</h3>
-        <p className="text-sm text-muted-foreground">Chọn template phù hợp với ngành nghề và phong cách của bạn</p>
+        <h3 className="text-lg font-semibold mb-2">Bước 1: Chọn mẫu CV</h3>
+        <p className="text-sm text-muted-foreground">Chọn mẫu CV phù hợp với ngành nghề và phong cách của bạn</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4">
@@ -59,7 +59,7 @@ export function TemplateSelector() {
             </div>
             <div className="flex-1">
               <p className="text-sm font-medium text-blue-900 dark:text-blue-100">
-                Template đã chọn: {CV_TEMPLATES.find((t) => t.id === selectedTemplate)?.name}
+                Mẫu CV đã chọn: {CV_TEMPLATES.find((t) => t.id === selectedTemplate)?.name}
               </p>
             </div>
             <ArrowRight className="w-4 h-4 text-blue-600 dark:text-blue-400" />

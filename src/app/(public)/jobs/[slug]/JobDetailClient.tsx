@@ -152,13 +152,13 @@ export default function JobDetailClient({ job: initialJob, slug }: JobDetailClie
         userPhoneNumber: userProfile?.phoneNumber as string,
       });
 
-      console.log("userProfile", userProfile);
+      // console.log("userProfile", userProfile);
 
       if (response.success) {
         setHasApplied(true);
         setApplicationStatus({
           status: "success",
-          message: "Your application has been submitted successfully!",
+          message: "Đã gửi đơn ứng tuyển. Hãy chờ nhà tuyển dụng liên hệ!",
         });
 
         window.scrollTo({ top: 0, behavior: "smooth" });

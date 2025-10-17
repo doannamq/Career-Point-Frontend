@@ -75,7 +75,7 @@ export default function PostJobStep2({ formData, setFormData, setFormTouched, er
               size="sm"
               onClick={() => setShowTips(!showTips)}
               className="text-xs text-blue-600 hover:text-blue-700 hover:bg-blue-50 transition-colors duration-200">
-              {showTips ? "Hide Tips" : "Show Tips"}
+              {showTips ? "Ẩn gợi ý" : "Hiện gợi ý"}
             </Button>
           </div>
 

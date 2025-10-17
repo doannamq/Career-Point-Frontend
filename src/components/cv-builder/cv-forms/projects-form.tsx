@@ -105,7 +105,7 @@ export function ProjectsForm() {
                 <CardContent className="space-y-4">
                   <div>
                     <Label htmlFor={`projectName-${project.id}`} className="mb-2">
-                      Project Name <span className="text-red-600">*</span>
+                      Tên Project <span className="text-red-600">*</span>
                     </Label>
                     <Input
                       id={`projectName-${project.id}`}

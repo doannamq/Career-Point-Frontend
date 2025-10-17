@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const TypewriterAnimation = () => {
-  const texts = ["smart recommendations", "AI-powered search", "personalized insights"];
+  // const texts = ["smart recommendations", "AI-powered search", "personalized insights"];
+  const texts = ["Gợi ý thông minh", "Chatbot AI", "Thông tin cá nhân hóa"];
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -48,7 +49,7 @@ const TypewriterAnimation = () => {
     <div className="text-center">
       <h1
         className="text-4xl font-tobias tracking-tighter sm:text-5xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 leading-[1.2] pb-1"
-        style={{ fontFamily: "Tobias, sans-serif" }}>
+        style={{ fontFamily: "Tobias, times-new-roman" }}>
         <p>
           {currentText}
           <span

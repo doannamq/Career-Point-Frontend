@@ -46,6 +46,7 @@ import TypewriterAnimation from "@/components/TypeWrite";
 import InfiniteLogoCarousel from "@/components/InfiniteLogoCarousel";
 import "../../styles/style.css";
 import { Job } from "@/types/job";
+import { convertJobType } from "@/helpers/converJobType";
 
 const categories = [
   { name: "Công nghệ", icon: <Code className="h-6 w-6" />, count: 235, color: "bg-blue-50 text-blue-600" },
@@ -65,7 +66,16 @@ const categories = [
   { name: "Tài chính", icon: <CreditCard className="h-6 w-6" />, count: 70, color: "bg-teal-50 text-teal-600" },
 ];
 
-const popularSearches = ["Developer", "Marketing", "Design", "Remote", "Full-time", "Engineering", "Sales", "Finance"];
+const popularSearches = [
+  "Công nghệ thông tin",
+  "Marketing",
+  "Thiết kế",
+  "Làm việc từ xa",
+  "Toàn thời gian",
+  "Kỹ thuật",
+  "Bán hàng",
+  "Tài chính",
+];
 
 const stats = [
   { value: "10K+", label: "Việc làm", icon: <Briefcase className="h-5 w-5" /> },
@@ -189,7 +199,8 @@ export default function Home() {
               <h1
                 className="text-4xl font-bold tracking-normal sm:text-5xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 leading-[1.2] pb-1"
                 style={{ fontFamily: "PolySans Bulky, sans-serif" }}>
-                Find your dream job today with
+                {/* Find your dream job today with */}
+                Chạm đến công việc mơ ước với
               </h1>
 
               <TypewriterAnimation />
@@ -421,10 +432,10 @@ export default function Home() {
                 Tất cả
               </TabsTrigger>
               <TabsTrigger value="full" className="data-[state=active]:bg-primary/10">
-                Full-time
+                Toàn thời gian
               </TabsTrigger>
               <TabsTrigger value="remote" className="data-[state=active]:bg-primary/10">
-                Remote
+                Làm việc từ xa
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -500,9 +511,9 @@ export default function Home() {
                       <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
                         {category.name}
                       </h3>
-                      <p className="mt-2 text-sm text-muted-foreground">
+                      {/* <p className="mt-2 text-sm text-muted-foreground">
                         <span className="font-medium">{category.count}</span> việc làm
-                      </p>
+                      </p> */}
                       <motion.div
                         className="mt-3 text-primary text-sm font-medium opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 flex items-center"
                         initial={false}>
@@ -735,7 +746,7 @@ function JobCard({ job, user }: { job: Job; user: any }) {
             </div>
             <div className="flex items-center text-sm text-muted-foreground">
               <Briefcase className="mr-2 h-4 w-4 text-blue-500" />
-              {job.jobType}
+              {convertJobType(job.jobType)}
             </div>
             <div className="flex items-center text-sm text-muted-foreground">
               <Clock className="mr-2 h-4 w-4 text-amber-500" />
@@ -762,7 +773,7 @@ function JobCard({ job, user }: { job: Job; user: any }) {
             )}
           </div>
 
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             {user && job?.applicants.includes(user.userId) ? (
               <Button
                 size="sm"
@@ -782,7 +793,7 @@ function JobCard({ job, user }: { job: Job; user: any }) {
                 </Button>
               </Link>
             )}
-          </div>
+          </div> */}
         </div>
       </CardContent>
     </Card>

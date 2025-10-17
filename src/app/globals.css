@@ -125,6 +125,19 @@
   .animate-pulse-slow {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
+
+  .scrollbar-rounded::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-rounded::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* slate-300 */
+    border-radius: 9999px;
+  }
+
+  .scrollbar-rounded::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 /* @font-face {

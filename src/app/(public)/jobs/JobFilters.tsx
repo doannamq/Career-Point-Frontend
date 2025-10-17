@@ -41,20 +41,16 @@ const EXPERIENCE_LEVELS = [
 
 // Common skills
 const COMMON_SKILLS = [
-  "JavaScript",
-  "React",
-  "Node.js",
-  "Python",
-  "Java",
-  "HTML/CSS",
-  "SQL",
-  "TypeScript",
-  "Angular",
-  "Vue.js",
-  "AWS",
-  "Docker",
-  "Git",
-  "DevOps",
+  "Công nghệ",
+  "Y tế",
+  "Kinh doanh",
+  "Giáo dục",
+  "Bán lẻ",
+  "Dịch vụ khách sạn",
+  "Logistics",
+  "Kỹ thuật",
+  "Thiết kế",
+  "Tài chính",
 ];
 
 interface JobFiltersProps {
@@ -197,7 +193,7 @@ export default function JobFilters({
               <div className="space-y-3">
                 <Label className="flex items-center gap-2 text-sm">
                   <BadgeCheck className="h-4 w-4 text-muted-foreground" />
-                  Kỹ năng
+                  Lĩnh vực
                 </Label>
                 <ScrollArea className="h-[200px] rounded-md border p-2">
                   <div className="space-y-2">
@@ -361,7 +357,7 @@ export default function JobFilters({
                 <div className="space-y-3">
                   <Label className="flex items-center gap-2 text-sm">
                     <BadgeCheck className="h-4 w-4 text-muted-foreground" />
-                    Kỹ năng
+                    Lĩnh vực
                   </Label>
                   <div className="grid grid-cols-2 gap-2 max-h-[200px] overflow-y-auto rounded-md border p-2">
                     {COMMON_SKILLS.map((skill) => (

@@ -259,17 +259,17 @@ export default function JobSearchLogin() {
               </motion.div>
 
               {/* Divider */}
-              <motion.div variants={itemVariants} className="relative">
+              {/* <motion.div variants={itemVariants} className="relative">
                 <div className="absolute inset-0 flex items-center">
                   <span className="w-full border-t border-gray-200" />
                 </div>
                 <div className="relative flex justify-center text-sm">
                   <span className="bg-white px-4 text-gray-500">Hoặc đăng nhập với</span>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Social Login */}
-              <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
+              {/* <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3">
                 <motion.button
                   type="button"
                   whileHover={{ scale: 1.02, y: -1 }}
@@ -305,7 +305,7 @@ export default function JobSearchLogin() {
                   </svg>
                   LinkedIn
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
             </motion.form>
           </motion.div>
         </div>

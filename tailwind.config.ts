@@ -97,8 +97,9 @@ const config = {
     },
   },
   plugins: [
+    require('tailwind-scrollbar'),
     require("tailwindcss-animate"),
-    require("@tailwindcss/typography"), // ← thêm dòng này
+    require("@tailwindcss/typography"),
   ],
 } satisfies Config;
 

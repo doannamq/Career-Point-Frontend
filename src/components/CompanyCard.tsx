@@ -76,10 +76,10 @@ export function CompanyCard({ company }: CompanyCardProps) {
             <Calendar className="w-4 h-4 text-muted-foreground" />
             <span>Thành lập {company?.foundedYear}</span>
           </div>
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Building2 className="w-4 h-4 text-muted-foreground" />
             <span>{company?.stats.activeJobs} việc làm</span>
-          </div>
+          </div> */}
         </div>
 
         {company?.benefits.length > 0 && (

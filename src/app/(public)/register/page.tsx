@@ -126,7 +126,9 @@ export default function JobSearchRegister() {
                 {formStep === 0 ? "Tạo tài khoản mới" : "Hoàn thiện hồ sơ của bạn"}
               </h2>
               <p className="text-gray-600">
-                {formStep === 0 ? "Bắt đầu hành trình tìm kiếm cơ hội nghề nghiệp" : "Chỉ còn vài thông tin nữa để hoàn tất đăng ký"}
+                {formStep === 0
+                  ? "Bắt đầu hành trình tìm kiếm cơ hội nghề nghiệp"
+                  : "Chỉ còn vài thông tin nữa để hoàn tất đăng ký"}
               </p>
 
               {/* Progress Steps */}
@@ -138,7 +140,11 @@ export default function JobSearchRegister() {
                     }`}>
                     1
                   </div>
-                  <div className={`w-12 h-1 rounded-full transition-all duration-300 ${formStep >= 1 ? "bg-blue-600" : "bg-gray-200"}`} />
+                  <div
+                    className={`w-12 h-1 rounded-full transition-all duration-300 ${
+                      formStep >= 1 ? "bg-blue-600" : "bg-gray-200"
+                    }`}
+                  />
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
                       formStep >= 1 ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-500"
@@ -150,9 +156,17 @@ export default function JobSearchRegister() {
             </div>
 
             {/* Registration Form */}
-            <motion.form onSubmit={handleSubmit} variants={containerVariants} initial="hidden" animate="visible" className="space-y-6">
+            <motion.form
+              onSubmit={handleSubmit}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              className="space-y-6">
               {error && (
-                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}>
                   <Alert variant="destructive" className="border-red-200 bg-red-50 rounded-xl">
                     <AlertCircle className="h-4 w-4" />
                     <AlertDescription className="text-red-700">{error}</AlertDescription>
@@ -160,7 +174,13 @@ export default function JobSearchRegister() {
                 </motion.div>
               )}
 
-              <motion.div key={formStep} variants={stepVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.3 }}>
+              <motion.div
+                key={formStep}
+                variants={stepVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                transition={{ duration: 0.3 }}>
                 {formStep === 0 ? (
                   <div className="space-y-5">
                     <motion.div variants={itemVariants} className="space-y-2">
@@ -239,13 +259,17 @@ export default function JobSearchRegister() {
                           {isShowPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                         </motion.button>
                       </div>
-                      <p className="text-xs text-gray-500 mt-1">Mật khẩu phải có ít nhất 8 ký tự và bao gồm chữ hoa, chữ thường và số.</p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Mật khẩu phải có ít nhất 8 ký tự và bao gồm chữ hoa, chữ thường và số.
+                      </p>
                     </motion.div>
                   </div>
                 ) : (
                   <div className="space-y-5">
                     <motion.div variants={itemVariants} className="space-y-2">
-                      <Label htmlFor="phoneNumber" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                      <Label
+                        htmlFor="phoneNumber"
+                        className="text-sm font-medium text-gray-700 flex items-center gap-2">
                         <Phone className="h-4 w-4 text-blue-500" />
                         Số điện thoại
                       </Label>
@@ -319,9 +343,13 @@ export default function JobSearchRegister() {
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className={`p-4 rounded-xl border-2 ${role === "applicant" ? "bg-blue-50 border-blue-200" : "bg-green-50 border-green-200"}`}>
+                        className={`p-4 rounded-xl border-2 ${
+                          role === "applicant" ? "bg-blue-50 border-blue-200" : "bg-green-50 border-green-200"
+                        }`}>
                         <h4
-                          className={`text-sm font-medium mb-2 flex items-center gap-2 ${role === "applicant" ? "text-blue-800" : "text-green-800"}`}>
+                          className={`text-sm font-medium mb-2 flex items-center gap-2 ${
+                            role === "applicant" ? "text-blue-800" : "text-green-800"
+                          }`}>
                           {role === "applicant" ? (
                             <>
                               <Target className="h-4 w-4" />
@@ -405,7 +433,9 @@ export default function JobSearchRegister() {
               <motion.div variants={itemVariants} className="text-center">
                 <p className="text-sm text-gray-600">
                   Đã có tài khoản?{" "}
-                  <Link href="/login" className="text-blue-600 hover:text-blue-500 font-semibold hover:underline transition-colors duration-200">
+                  <Link
+                    href="/login"
+                    className="text-blue-600 hover:text-blue-500 font-semibold hover:underline transition-colors duration-200">
                     Đăng nhập ngay
                   </Link>
                 </p>
@@ -440,7 +470,11 @@ export default function JobSearchRegister() {
         </div>
 
         <div className="relative flex flex-col justify-center px-12 py-12">
-          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="max-w-md">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="max-w-md">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               Bắt đầu
               <span className="text-blue-600"> hành trình nghề nghiệp </span>
@@ -490,13 +524,18 @@ export default function JobSearchRegister() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Thăng tiến sự nghiệp</h3>
-                  <p className="text-gray-600 text-sm">Nhận lời khuyên và hướng dẫn để đưa sự nghiệp của bạn lên tầm cao mới</p>
+                  <p className="text-gray-600 text-sm">
+                    Nhận lời khuyên và hướng dẫn để đưa sự nghiệp của bạn lên tầm cao mới
+                  </p>
                 </div>
               </motion.div>
             </div>
 
             {/* Success Stories */}
-            <motion.div variants={floatingVariants} animate="animate" className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
+            <motion.div
+              variants={floatingVariants}
+              animate="animate"
+              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-sm">
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center">
                   <CheckCircle className="h-5 w-5 text-white" />

@@ -10,6 +10,7 @@ import { Sparkles, MapPin, Banknote, Building2, Briefcase, Clock } from "lucide-
 import { formatSalary, getSimilarJobs, getTimeAgo } from "@/lib/api/jobs";
 import { formatCompanyAddress } from "@/helpers/formatCompanyAddress";
 import { Job } from "@/types/job";
+import { convertJobType } from "@/helpers/converJobType";
 
 interface SimilarJobsProps {
   job: Job;
@@ -61,7 +62,7 @@ export default function SimilarJobs({ job, fadeInVariants }: SimilarJobsProps) {
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Briefcase className="mr-2 h-4 w-4 text-blue-500" />
-                      {job.jobType}
+                      {convertJobType(job.jobType)}
                     </div>
                     <div className="flex items-center text-sm text-muted-foreground">
                       <Clock className="mr-2 h-4 w-4 text-amber-500" />

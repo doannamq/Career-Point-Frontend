@@ -482,7 +482,7 @@ export default function Header() {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-sm font-medium text-gray-900 leading-tight">{userData?.name}</span>
-                      <span className="text-xs text-gray-500 leading-tight capitalize">{user?.role}</span>
+                      <span className="text-xs text-gray-500 leading-tight capitalize">{user?.role === "recruiter" ? "Nhà tuyển dụng" : "Ứng viên"}</span>
                     </div>
                   </motion.div>
                 </NavigationLink>

@@ -41,10 +41,10 @@ export default function ApplicationStatusAlert({ applicationStatus }: Applicatio
                 applicationStatus.status === "success" ? "text-green-800" : applicationStatus.status === "error" ? "text-red-800" : "text-blue-800"
               }>
               {applicationStatus.status === "success"
-                ? "Application Submitted"
+                ? "Đã ứng tuyển thành công"
                 : applicationStatus.status === "error"
-                ? "Application Failed"
-                : "Information"}
+                ? "Đã xảy ra lỗi khi ứng tuyển"
+                : "Thông tin"}
             </AlertTitle>
             <AlertDescription
               className={

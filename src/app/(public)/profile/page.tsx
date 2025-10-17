@@ -694,9 +694,9 @@ export default function ProfilePage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div>
               <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70">
-                My Profile
+                Hồ sơ của tôi
               </h1>
-              <p className="text-muted-foreground mt-1">Manage your personal and professional information</p>
+              <p className="text-muted-foreground mt-1">Quản lý thông tin cá nhân và chuyên môn của bạn</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
@@ -722,7 +722,7 @@ export default function ProfilePage() {
               <div>
                 <h3 className="text-sm font-medium flex items-center gap-2">
                   <Sparkles className="h-4 w-4 text-primary" />
-                  Profile Completeness
+                  Hoàn thiện hồ sơ
                 </h3>
                 <div className="mt-2 flex items-center gap-2">
                   <Progress value={profileCompleteness} className="w-48 h-2" />
@@ -740,7 +740,7 @@ export default function ProfilePage() {
                         setIsEditing(true);
                         setActiveTab(isApplicant ? "professional" : "company");
                       }}>
-                      Complete Your Profile
+                      Hoàn thiện ngay
                       <ChevronRight className="h-3 w-3 ml-1" />
                     </Button>
                   </motion.div>
@@ -967,7 +967,7 @@ export default function ProfilePage() {
                           </motion.div>
                         ) : (
                           <div className="flex items-center gap-2 py-2 border-b border-dashed border-muted">
-                            <span>{profileData?.phoneNumber || "No phone number"}</span>
+                            <span>{profileData?.phoneNumber || "Chưa có số điện thoại"}</span>
                           </div>
                         )}
                       </div>
@@ -992,7 +992,7 @@ export default function ProfilePage() {
                           </motion.div>
                         ) : (
                           <div className="flex items-center gap-2 py-2 border-b border-dashed border-muted">
-                            <span>{profileData?.location || "No location"}</span>
+                            <span>{profileData?.location || "Chưa có địa chỉ"}</span>
                           </div>
                         )}
                       </div>
@@ -1795,36 +1795,48 @@ export default function ProfilePage() {
                         </CardTitle>
                         <CardDescription>Quản lý thông tin công ty của bạn</CardDescription>
                       </div>
-                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Button
-                          variant={isEditing ? "default" : "outline"}
-                          size="sm"
-                          onClick={() => {
-                            if (isEditing) {
-                              handleSaveProfile();
-                            } else {
-                              setOriginalProfileData({ ...profileData });
-                              setIsEditing(true);
-                            }
-                          }}
-                          className={`flex items-center gap-1 ${
-                            isEditing
-                              ? "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-sm"
-                              : "border-primary/30 text-primary hover:bg-primary/5"
-                          }`}>
-                          {isEditing ? (
-                            <>
-                              <Save className="h-4 w-4" />
-                              Lưu thay đổi
-                            </>
-                          ) : (
-                            <>
-                              <Edit className="h-4 w-4" />
-                              Chỉnh sửa
-                            </>
-                          )}
-                        </Button>
-                      </motion.div>
+                      <div className="flex gap-2 items-center">
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                          <NavigationLink href={`/companies/${companyData?._id}`}>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="flex items-center gap-1 border-primary/30 text-primary hover:bg-primary/5 bg-transparent cursor-pointer">
+                              Xem trang công ty
+                            </Button>
+                          </NavigationLink>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                          <Button
+                            variant={isEditing ? "default" : "outline"}
+                            size="sm"
+                            onClick={() => {
+                              if (isEditing) {
+                                handleSaveProfile();
+                              } else {
+                                setOriginalProfileData({ ...profileData });
+                                setIsEditing(true);
+                              }
+                            }}
+                            className={`flex items-center gap-1 cursor-pointer ${
+                              isEditing
+                                ? "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-sm"
+                                : "border-primary/30 text-primary hover:bg-primary/5"
+                            }`}>
+                            {isEditing ? (
+                              <>
+                                <Save className="h-4 w-4" />
+                                Lưu thay đổi
+                              </>
+                            ) : (
+                              <>
+                                <Edit className="h-4 w-4" />
+                                Chỉnh sửa
+                              </>
+                            )}
+                          </Button>
+                        </motion.div>
+                      </div>
                     </CardHeader>
                     <CardContent className="space-y-6 pt-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1952,9 +1964,7 @@ export default function ProfilePage() {
                         ) : (
                           <div
                             dangerouslySetInnerHTML={{
-                              __html:
-                                companyData?.description ||
-                                "<p class='text-gray-500 italic'>No description provided.</p>",
+                              __html: companyData?.description || "<p class='text-gray-500 italic'>Chưa có mô tả</p>",
                             }}
                           />
                         )}
@@ -2118,16 +2128,16 @@ export default function ProfilePage() {
                                           Chỉnh sửa
                                         </Button>
                                       </motion.div>
-                                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                                      {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                         <Button
-                                          variant={job.status === "Active" ? "destructive" : "default"}
+                                          variant={job.status === "Published" ? "destructive" : "default"}
                                           size="sm"
                                           className={
-                                            job.status !== "Active"
+                                            job.status !== "Published"
                                               ? "bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary shadow-sm"
                                               : ""
                                           }>
-                                          {job.status === "Active" ? (
+                                          {job.status === "Published" ? (
                                             <>
                                               <X className="h-3.5 w-3.5 mr-1.5" />
                                               Đóng việc
@@ -2139,7 +2149,7 @@ export default function ProfilePage() {
                                             </>
                                           )}
                                         </Button>
-                                      </motion.div>
+                                      </motion.div> */}
                                     </div>
                                   </div>
                                 </div>

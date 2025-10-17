@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Search, Filter } from "lucide-react";
 import type { CompanySearchParams } from "@/types/company";
+import { convertCompanyIndustry } from "@/helpers/convertCompanyIndustry";
 
 interface CompanySearchProps {
   onSearch: (params: CompanySearchParams) => void;
@@ -87,10 +88,10 @@ export function CompanySearch({ onSearch, onReset, loading }: CompanySearchProps
               <SelectValue placeholder="Select an industry" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All Industries</SelectItem>
+              <SelectItem value="all">Tất cả</SelectItem>
               {industries.map((industry) => (
                 <SelectItem key={industry} value={industry}>
-                  {industry}
+                  {convertCompanyIndustry(industry)}
                 </SelectItem>
               ))}
             </SelectContent>
