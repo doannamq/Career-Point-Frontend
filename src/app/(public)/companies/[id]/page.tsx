@@ -310,7 +310,7 @@ export default function CompanyDetailPage() {
           <p className="text-gray-600 mb-4">{error}</p>
           <Button onClick={() => router.back()} className="cursor-pointer">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Go Back
+            Quay lại
           </Button>
         </div>
       </div>
@@ -326,7 +326,7 @@ export default function CompanyDetailPage() {
           onClick={() => router.back()}
           className="flex items-center gap-2 border-primary/30 text-primary hover:bg-primary/5 cursor-pointer">
           <ArrowLeft className="h-4 w-4" />
-          Back
+          Quay lại
         </Button>
       </div>
 
